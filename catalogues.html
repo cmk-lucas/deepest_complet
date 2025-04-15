@@ -1,174 +1,1445 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique - StreetWear Empire</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/outline"></script>
+    <title>BDS</title>
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./assets/images/BDSSS BLANCCC.JPEG.jpg" type="image/svg+xml"
+        style="border-radius: 100%;">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="css/style4.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
+        rel="stylesheet">
 </head>
-<body class="bg-black text-white">
 
-<!-- Header simple avec barre de recherche -->
-<header class="p-6 flex justify-between items-center">
-    <h1 class="text-3xl font-extrabold uppercase">Deepest<span class="text-red-500">Empire</span></h1>
-    
+<body>
 
-    <nav class="space-x-6 hidden md:flex text-lg">
-        <a href="#" class="hover:text-red-500">Accueil</a>
-        <a href="#shop" class="hover:text-red-500">Boutique</a>
-        <a href="#about" class="hover:text-red-500">À propos</a>
-        <a href="#contact" class="hover:text-red-500">Contact</a>
-    </nav>
-</header>
+    <!-- 
+    - #HEADER
+  -->
 
+    <header class="header" data-header>
+        <div class="container">
 
-<!-- Section Produits -->
-<section class="px-6 py-10">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 uppercase">Nos Produits</h2>
+            <div class="overlay" data-overlay></div>
 
-    <div id="product-container" class="grid grid-cols-2 md:grid-cols-3 gap-8">
-        
-        <!-- Produit 1 -->
-        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg min-h-[400px]">
-            <img src="assets/tshirt-7.jpg" alt="Produit 1" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
-            <div class="p-3">
-                <h3 class="text-xl font-bold mb-2">Hoodie Street</h3>
-                <p class="text-gray-400 mb-3">
-                    <span class="line-through">€89.99</span> <span class="font-bold text-red-500">€79.99</span>
-                </p>
-                <a href="details.html">
-                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
-                        Voir le produit
-                    </button>
-                </a>
-            </div>
-        </div>
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="Ridex logo" style="width:50px;">
+            </a>
 
-        <!-- Produit 2 -->
-        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg" data-name="Cargo Pants">
-            <img src="assets/tshirt-8.jpg" alt="Produit 2" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
-            <div class="p-3">
-                <h3 class="text-xl font-bold mb-2">Cargo Pants</h3>
-                <p class="text-gray-400 mb-3">
-                    <span class="line-through">€69.99</span> <span class="font-bold text-red-500">€59.49</span>
-                </p>
-                <a href="details.html">
-                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
-                        Voir le produit
-                    </button>
-                </a>
-            </div>
-        </div>
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
 
-        <!-- Produit 3 -->
-        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg" data-name="T-shirt Oversize">
-            <img src="assets/tshirt-6.jpg" alt="Produit 3" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
-            <div class="p-3">
-                <h3 class="text-xl font-bold mb-2">T-shirt Oversize</h3>
-                <p class="text-gray-400 mb-3">
-                    <span class="line-through">€49.99</span> <span class="font-bold text-red-500">€47.49</span>
-                </p>
-                <a href="details.html">
-                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
-                        Voir le produit
-                    </button>
-                </a>
-            </div>
-        </div>
+                    <li>
+                        <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                    </li>
 
-    </div>
+                    <li>
+                        <a href="catalogues.html" class="navbar-link" data-nav-link>Explor media</a>
+                    </li>
 
-    <!-- Bouton pour charger d'autres produits -->
-    <div class="text-center mt-8">
-        <button onclick="loadMoreProducts()" class="text-white border border-red-500 py-2 px-6 rounded-lg hover:bg-red-500 transition">
-            Charger les produits
-        </button>
-    </div>
-</section>
+                    <li>
+                        <a href="about_us.html" class="navbar-link" data-nav-link>About us</a>
+                    </li>
 
-<script>
-    // Fonction pour afficher/cacher l'input de recherche
-    function toggleSearchInput() {
-        const searchInput = document.getElementById('search-bar');
-        searchInput.classList.toggle('hidden'); // Basculer entre afficher/masquer
-        searchInput.focus(); // Focaliser sur l'input après l'affichage
-    }
+                    <li>
+                        <a href="catalogues.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
 
-    // Fonction de recherche de produit
-    function searchProduct() {
-        const query = document.getElementById("search-bar").value.toLowerCase();
-        const products = document.querySelectorAll('.product');
-        
-        products.forEach(product => {
-            const productName = product.getAttribute('data-name').toLowerCase();
-            if (productName.includes(query)) {
-                product.style.display = 'block';  // Afficher le produit
-            } else {
-                product.style.display = 'none';  // Cacher le produit
-            }
-        });
-    }
+                </ul>
+            </nav>
 
-    // Fonction pour charger plus de produits
-    function loadMoreProducts() {
-        const productContainer = document.getElementById('product-container');
+            <div class="header-actions">
 
-        // Produits à ajouter (ajoute ici plus de produits similaires)
-        const newProducts = [
-            {
-                image: 'assets/tshirt-6.jpg',
-                title: 'Sweatshirt Sport',
-                oldPrice: '€99.99',
-                newPrice: '€89.99',
-                link: 'details.html'
-            },
-            {
-                image: 'assets/tshirt-7.jpg',
-                title: 'Casquette Vintage',
-                oldPrice: '€29.99',
-                newPrice: '€24.99',
-                link: 'details.html'
-            },
-            {
-                image: 'assets/tshirt-8.jpg',
-                title: 'Jean Slim',
-                oldPrice: '€79.99',
-                newPrice: '€69.99',
-                link: 'details.html'
-            },
-            {
-                image: 'assets/tshirt-6.jpg',
-                title: 'Jean Slim',
-                oldPrice: '€79.99',
-                newPrice: '€69.99',
-                link: 'details.html'
-            }
-        ];
+                <div class="header-contact">
+                    <a href="tel:+243 903 470 559" class="contact-link">+243 903 470 559</a>
 
-        // Créer les nouveaux éléments de produits
-        newProducts.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product', 'bg-neutral-900', 'rounded-2xl', 'overflow-hidden', 'group', 'relative', 'shadow-lg' ,'min-h-[400px]');
-
-            productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.title}" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
-                <div class="p-4">
-                    <h3 class="text-2xl font-bold mb-2">${product.title}</h3>
-                    <p class="text-gray-400 mb-4">
-                        <span class="line-through">${product.oldPrice}</span> <span class="font-bold text-red-500">${product.newPrice}</span>
-                    </p>
-                    <a href="${product.link}">
-                        <button class="border border-white w-full py-2 uppercase text-sm hover:bg-red-500 transition">
-                            Voir le produit
-                        </button>
-                    </a>
+                    <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
                 </div>
-            `;
-            productContainer.appendChild(productElement);
-        });
-    }
-</script>
+
+                <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
+                    <ion-icon name="car-outline"></ion-icon>
+
+                    <span id="aria-label-txt">Explore shoes</span>
+                </a>
+
+                <a href="#" class="btn user-btn" aria-label="Profile">
+                    <ion-icon name="person-outline"></ion-icon>
+                </a>
+
+                <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+
+            <!-- 
+        - #FEATURED CAR
+      -->
+
+            <section class="section featured-car" id="featured-car">
+                <div class="container">
+
+                    <div class="title-wrapper">
+                        <h2 class="h2 section-title">--------------</h2>
+                    </div>
+
+                    <ul class="featured-car-list">
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="Toyota RAV4 2021" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2021">2017</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl;xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l;xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$35</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="catalogues.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">virtuos</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">Travis_scot</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$35</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">virtuos</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">virtuos</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="BMW 3 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="Volkswagen T-Cross 2020" loading="lazy"
+                                        width="440" height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deerpest</a>
+                                        </h3>
+
+                                        <data class="year" value="2020">2020</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-8.jpg" alt="Cadillac Escalade 2020" loading="lazy"
+                                        width="440" height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2020">2020</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl,white,chocolat,jaune</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    <img src="assets/tshirt-7.jpg" alt="BMW 4 Series GTI 2021" loading="lazy"
+                                        width="440" height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-shirt deepest</a>
+                                        </h3>
+
+                                        <data class="year" value="2021">2021</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">M,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">black,white,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="featured-car-card">
+
+                                <figure class="card-banner">
+                                    
+                                    <img src="assets/tshirt-6.jpg" alt="BMW 4 Series 2019" loading="lazy" width="440"
+                                        height="300" class="w-100">
+                                </figure>
+
+                                <div class="card-content">
+
+                                    <div class="card-title-wrapper">
+                                        <h3 class="h3 card-title">
+                                            <a href="details.html">T-SHIRT DEEPEST</a>
+                                        </h3>
+
+                                        <data class="year" value="2019">2019</data>
+                                    </div>
+
+                                    <ul class="card-list">
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="people-outline"></ion-icon>
+
+                                            <span class="card-item-text">1K People bay</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="footsteps-outline"></ion-icon>
+
+                                            <span class="card-item-text">homme/femme</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="resize-outline"></ion-icon>
+
+                                            <span class="card-item-text">m,l,xl,xxl</span>
+                                        </li>
+
+                                        <li class="card-list-item">
+                                            <ion-icon name="color-palette-outline"></ion-icon>
+
+                                            <span class="card-item-text">White,black,chocolat,jaune</span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="card-price-wrapper">
+
+                                        <p class="card-price">
+                                            <strong>$19,99</strong> / 2 day
+                                        </p>
+
+                                        <button class="btn fav-btn" aria-label="Add to favourite list">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </button>
+
+                                        <button class="btn">Rent now</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="script/cat.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>
