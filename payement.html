@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>deepest</title>
+  <link rel="stylesheet" href="css/style2.css" />
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+  <style>
+    .payment-logos {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .payment-logos img {
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: white;
+      padding: 5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      background-color: #1e40af;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background-color: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="payment-form" onsubmit="makePayment(event)">
+      <div class="row">
+        <div class="column">
+          <h3 class="title">Billing Address</h3>
+          <div class="input-box">
+            <span>Full Name :</span>
+            <input type="text" id="fullName" placeholder="Jacob Aiden" required />
+          </div>
+          <div class="input-box">
+            <span>Email :</span>
+            <input type="email" id="email" placeholder="example@example.com" required />
+          </div>
+          <div class="input-box">
+            <span>Address :</span>
+            <input type="text" placeholder="Room - Street - Locality" />
+          </div>
+          <div class="input-box">
+            <span>City :</span>
+            <input type="text" placeholder="Kinshasa" />
+          </div>
+
+          <div class="flex">
+            <div class="input-box">
+              <span>State :</span>
+              <input type="text" placeholder="RDC" />
+            </div>
+            <div class="input-box">
+              <span>Zip Code :</span>
+              <input type="number" placeholder="123456" />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <h3 class="title">Paiement disponible :</h3>
+          <div class="payment-logos">
+            <img src="https://seeklogo.com/images/M/m-pesa-logo-1C3C269BAA-seeklogo.com.png" alt="M-Pesa" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Orange_Money_logo.svg/512px-Orange_Money_logo.svg.png" alt="Orange Money" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Airtel_Logo.png" alt="Airtel Money" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" />
+          </div>
+
+          <div class="input-box">
+            <span>Nom sur la carte :</span>
+            <input type="text" placeholder="Mr. Jacob Aiden" />
+          </div>
+          <div class="input-box">
+            <span>Numéro de carte :</span>
+            <input type="number" placeholder="1111 2222 3333 4444" />
+          </div>
+          <div class="input-box">
+            <span>Mois d'exp. :</span>
+            <input type="text" placeholder="Août" />
+          </div>
+
+          <div class="flex">
+            <div class="input-box">
+              <span>Année d'exp. :</span>
+              <input type="number" placeholder="2025" />
+            </div>
+            <div class="input-box">
+              <span>CVV :</span>
+              <input type="number" placeholder="123" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Acheter avec Flutterwave</button>
+    </form>
+  </div>
+
+  <script>
+    function makePayment(e) {
+      e.preventDefault();
+      const fullName = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK_TEST-xxxxxxxxxxxxxxxxxxxxx", // Clé à remplacer
+        tx_ref: "tx_" + Date.now(),
+        amount: 50,
+        currency: "USD", // ou CDF selon le besoin
+        payment_options: "card, mobilemoney, ussd",
+        customer: {
+          email: email,
+          name: fullName,
+        },
+        callback: function (data) {
+          console.log("Paiement terminé", data);
+          alert("Paiement réussi !");
+        },
+        onclose: function () {
+          alert("Fenêtre de paiement fermée");
+        },
+        customizations: {
+          title: "Deups - Paiement sécurisé",
+          description: "Achat de vêtement haut de gamme",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Shopping_cart_icon.svg/512px-Shopping_cart_icon.svg.png"
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

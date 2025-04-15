@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - StreetWear Empire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/outline"></script>
+</head>
+<body class="bg-black text-white">
+
+<!-- Header simple avec barre de recherche -->
+<header class="p-6 flex justify-between items-center">
+    <h1 class="text-3xl font-extrabold uppercase">Deepest<span class="text-red-500">Empire</span></h1>
+    
+
+    <nav class="space-x-6 hidden md:flex text-lg">
+        <a href="#" class="hover:text-red-500">Accueil</a>
+        <a href="#shop" class="hover:text-red-500">Boutique</a>
+        <a href="#about" class="hover:text-red-500">À propos</a>
+        <a href="#contact" class="hover:text-red-500">Contact</a>
+    </nav>
+</header>
+
+
+<!-- Section Produits -->
+<section class="px-6 py-10">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 uppercase">Nos Produits</h2>
+
+    <div id="product-container" class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        
+        <!-- Produit 1 -->
+        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg min-h-[400px]">
+            <img src="assets/tshirt-7.jpg" alt="Produit 1" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
+            <div class="p-3">
+                <h3 class="text-xl font-bold mb-2">Hoodie Street</h3>
+                <p class="text-gray-400 mb-3">
+                    <span class="line-through">€89.99</span> <span class="font-bold text-red-500">€79.99</span>
+                </p>
+                <a href="details.html">
+                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
+                        Voir le produit
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg" data-name="Cargo Pants">
+            <img src="assets/tshirt-8.jpg" alt="Produit 2" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
+            <div class="p-3">
+                <h3 class="text-xl font-bold mb-2">Cargo Pants</h3>
+                <p class="text-gray-400 mb-3">
+                    <span class="line-through">€69.99</span> <span class="font-bold text-red-500">€59.49</span>
+                </p>
+                <a href="details.html">
+                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
+                        Voir le produit
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="product bg-neutral-900 rounded-2xl overflow-hidden group relative shadow-lg" data-name="T-shirt Oversize">
+            <img src="assets/tshirt-6.jpg" alt="Produit 3" class="w-full h-60 object-cover transition duration-500 group-hover:scale-110">
+            <div class="p-3">
+                <h3 class="text-xl font-bold mb-2">T-shirt Oversize</h3>
+                <p class="text-gray-400 mb-3">
+                    <span class="line-through">€49.99</span> <span class="font-bold text-red-500">€47.49</span>
+                </p>
+                <a href="details.html">
+                    <button class="border border-white w-full py-2 uppercase text-xs hover:bg-red-500 transition">
+                        Voir le produit
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bouton pour charger d'autres produits -->
+    <div class="text-center mt-8">
+        <button onclick="loadMoreProducts()" class="text-white border border-red-500 py-2 px-6 rounded-lg hover:bg-red-500 transition">
+            Charger les produits
+        </button>
+    </div>
+</section>
+
+<script>
+    // Fonction pour afficher/cacher l'input de recherche
+    function toggleSearchInput() {
+        const searchInput = document.getElementById('search-bar');
+        searchInput.classList.toggle('hidden'); // Basculer entre afficher/masquer
+        searchInput.focus(); // Focaliser sur l'input après l'affichage
+    }
+
+    // Fonction de recherche de produit
+    function searchProduct() {
+        const query = document.getElementById("search-bar").value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        
+        products.forEach(product => {
+            const productName = product.getAttribute('data-name').toLowerCase();
+            if (productName.includes(query)) {
+                product.style.display = 'block';  // Afficher le produit
+            } else {
+                product.style.display = 'none';  // Cacher le produit
+            }
+        });
+    }
+
+    // Fonction pour charger plus de produits
+    function loadMoreProducts() {
+        const productContainer = document.getElementById('product-container');
+
+        // Produits à ajouter (ajoute ici plus de produits similaires)
+        const newProducts = [
+            {
+                image: 'assets/tshirt-6.jpg',
+                title: 'Sweatshirt Sport',
+                oldPrice: '€99.99',
+                newPrice: '€89.99',
+                link: 'view.html?id=4'
+            },
+            {
+                image: 'assets/tshirt-7.jpg',
+                title: 'Casquette Vintage',
+                oldPrice: '€29.99',
+                newPrice: '€24.99',
+                link: 'view.html?id=5'
+            },
+            {
+                image: 'assets/tshirt-8.jpg',
+                title: 'Jean Slim',
+                oldPrice: '€79.99',
+                newPrice: '€69.99',
+                link: 'view.html?id=6'
+            }
+        ];
+
+        // Créer les nouveaux éléments de produits
+        newProducts.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product', 'bg-neutral-900', 'rounded-2xl', 'overflow-hidden', 'group', 'relative', 'shadow-lg' ,'min-h-[400px]');
+
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.title}" class="w-full h-80 object-cover transition duration-500 group-hover:scale-110">
+                <div class="p-4">
+                    <h3 class="text-2xl font-bold mb-2">${product.title}</h3>
+                    <p class="text-gray-400 mb-4">
+                        <span class="line-through">${product.oldPrice}</span> <span class="font-bold text-red-500">${product.newPrice}</span>
+                    </p>
+                    <a href="${product.link}">
+                        <button class="border border-white w-full py-2 uppercase text-sm hover:bg-red-500 transition">
+                            Voir le produit
+                        </button>
+                    </a>
+                </div>
+            `;
+            productContainer.appendChild(productElement);
+        });
+    }
+</script>
+
+</body>
+</html>
