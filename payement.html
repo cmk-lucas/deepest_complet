@@ -3,14 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>deepest</title>
+  <title>Commande - Deepest</title>
   <link rel="stylesheet" href="css/style2.css" />
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("65h5M19dJDjBV3SzC");
-    })();
-  </script>
   <style>
     .payment-logos {
       display: flex;
@@ -75,10 +70,60 @@
             </div>
           </div>
         </div>
+
+        <!-- Section pour les détails de la commande -->
+        <div class="column">
+          <h3 class="title">Order Details</h3>
+          <div class="input-box">
+            <span>Product Name :</span>
+            <input type="text" name="productName" id="productName" placeholder="Nom du produit" required />
+          </div>
+          <div class="input-box">
+            <span>Quantity :</span>
+            <input type="number" name="quantity" id="quantity" placeholder="1" required />
+          </div>
+          <div class="input-box">
+            <span>Price (per item) :</span>
+            <input type="number" name="price" id="price" placeholder="Prix unitaire" required />
+          </div>
+          <div class="input-box">
+            <span>Total Price :</span>
+            <input type="number" name="totalPrice" id="totalPrice" placeholder="Total" readonly />
+          </div>
+          
+          <!-- Section pour le mode de paiement -->
+          <h3 class="title">Payment Method</h3>
+          <div class="payment-logos">
+            <img src="images/paypal.png" alt="Paypal" />
+            <img src="images/creditcard.png" alt="Credit Card" />
+            <img src="images/banktransfer.png" alt="Bank Transfer" />
+          </div>
+          <div class="input-box">
+            <label for="paymentMethod">Payment Method:</label>
+            <select name="paymentMethod" id="paymentMethod" required>
+              <option value="creditcard">Credit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="banktransfer">Bank Transfer</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <button type="submit" class="btn">Envoyer le formulaire</button>
+      <button type="submit" class="btn">Submit Order</button>
     </form>
   </div>
+
+  <script>
+    // JavaScript pour calculer le total prix
+    document.getElementById('quantity').addEventListener('input', updateTotalPrice);
+    document.getElementById('price').addEventListener('input', updateTotalPrice);
+
+    function updateTotalPrice() {
+      const quantity = document.getElementById('quantity').value;
+      const price = document.getElementById('price').value;
+      const totalPriceField = document.getElementById('totalPrice');
+      totalPriceField.value = quantity * price;
+    }
+  </script>
 </body>
 </html>
