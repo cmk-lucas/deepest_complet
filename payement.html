@@ -91,6 +91,12 @@
             <input type="number" name="totalPrice" id="totalPrice" placeholder="Total" readonly />
           </div>
           
+          <!-- Section pour le numéro WhatsApp -->
+          <div class="input-box">
+            <span>WhatsApp Number :</span>
+            <input type="text" name="whatsapp" id="whatsapp" value="+243 97 511 8663" readonly />
+          </div>
+
           <!-- Section pour le mode de paiement -->
           <h3 class="title">Payment Method</h3>
           <div class="payment-logos">
@@ -122,7 +128,9 @@
       const quantity = document.getElementById('quantity').value;
       const price = document.getElementById('price').value;
       const totalPriceField = document.getElementById('totalPrice');
-      totalPriceField.value = quantity * price;
+      const fraisLivraison = 3; // Frais de livraison
+      const total = (quantity * price) + fraisLivraison;
+      totalPriceField.value = total;
     }
   </script>
 </body>
