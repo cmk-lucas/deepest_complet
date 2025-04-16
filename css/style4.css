@@ -267,7 +267,7 @@ button, a { transition: var(--transition); }
 .header-actions .btn span { display: none; }
 
 .user-btn {
-  --color: var(--independence);
+  color: black;
   --background: var(--white);
   --shadow-2: var(--shadow-1);
   box-shadow: var(--shadow-1);
