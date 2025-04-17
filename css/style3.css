@@ -35,12 +35,10 @@ nav ul {
     list-style-type: none;
     /* Retire les puces */
 }
-
 nav ul li {
     margin: 0 15px;
     /* Espacement entre les éléments du menu */
 }
-
 nav ul li a {
     text-decoration: none;
     /* Retire les soulignements */
@@ -51,12 +49,10 @@ nav ul li a {
     transition: color 0.3s ease;
     /* Effet au survol */
 }
-
 nav ul li a:hover {
     color: #ff6347;
     /* Couleur rouge au survol */
 }
-
 .menu-toggle {
     display: none;
     /* Masquer le bouton hamburger par défaut */
@@ -69,26 +65,22 @@ nav ul li a:hover {
     cursor: pointer;
     z-index: 2;
 }
-
 .menu-toggle .bar {
     width: 30px;
     height: 5px;
     background-color: white;
     border-radius: 5px;
 }
-
 .menu {
     display: flex;
     /* Par défaut, afficher le menu horizontalement */
 }
-
 .menu.open {
     display: flex;
     /* Afficher le menu quand il est ouvert */
     flex-direction: column;
     /* Empiler les éléments verticalement */
 }
-
 #bg-video {
     position: absolute;
     top: 0;
@@ -100,9 +92,6 @@ nav ul li a:hover {
     z-index: -1;
     /* La vidéo sera derrière tout autre élément */
 }
-
-
-
 /* Contenu au-dessus de la vidéo */
 .content {
     position: relative;
@@ -128,7 +117,6 @@ p {
     text-align: center;
     z-index: 10;
 }
-
 .shop-button button {
     background-color: transparent;
     color: white;
@@ -139,12 +127,10 @@ p {
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .shop-button button:hover {
     background-color:  #F87171;
     color: black;
 }
-
 .newsletter {
     display: flex;
     flex-direction: column;
@@ -153,7 +139,6 @@ p {
     color: #F87171;
     margin-top: 65px;
 }
-
 .newsletter input[type="email"] {
     padding: 10px;
     width: 250px;
@@ -171,7 +156,6 @@ p {
 .newsletter input[type="email"]:hover {
     border-color:#F87171 ;
 }
-
 .newsletter button {
     padding: 10px 20px;
     background-color: transparent;
@@ -186,12 +170,9 @@ p {
     appearance: none;
     font-family: inherit;
 }
-
 .newsletter button:hover {
     background-color: white;
 }
-
-
 /* Responsivité pour les petits écrans */
 @media (max-width: 768px) {
     header {
@@ -239,7 +220,6 @@ p {
         font-size: 1.2em;
     }
 }
-
 .cat{
     background-color: black;
 }
@@ -249,7 +229,6 @@ p {
     gap: 30px;
     justify-items: center;
 }
-
 .product {
     background-color: #1e1e1e;
     border-radius: 20px;
@@ -258,38 +237,31 @@ p {
     transition: transform 0.3s ease;
     min-height: 280px;
 }
-
 .product img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .product:hover img {
     transform: scale(1.1);
 }
-
 .product .content {
     padding: 20px;
 }
-
 .product h3 {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .product p {
     color: #aaa;
     margin-bottom: 15px;
 }
-
 .product p span {
     color: red;
     font-weight: bold;
 }
-
 .product .btn {
     width: 100%;
     padding: 10px;
@@ -301,11 +273,9 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .product .btn:hover {
     background-color: red;
 }
-
 .load-more-btn {
     display: block;
     width: 200px;
@@ -319,7 +289,6 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .load-more-btn:hover {
     background-color: red;
 }
@@ -332,11 +301,9 @@ p {
     text-align: center;
     transition: transform 0.3s ease;
 }
-
 .card:hover {
     transform: translateY(-10px);
 }
-
 .carousel {
     position: relative;
     width: 100%;
@@ -344,18 +311,15 @@ p {
     overflow: hidden;
     margin-bottom: 15px;
 }
-
 .carousel-images {
     display: flex;
     transition: transform 0.3s ease;
 }
-
 .carousel-images img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -368,31 +332,25 @@ p {
     z-index: 1;
     font-size: 1.5em;
 }
-
 .carousel-button.prev {
     left: 10px;
 }
-
 .carousel-button.next {
     right: 10px;
 }
-
 .card-details {
     padding: 15px;
 }
-
 .card-details h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #fff;
 }
-
 .card-details p {
     font-size: 1em;
     margin-bottom: 10px;
     color: #ccc;
 }
-
 .card-details .sizes,
 .card-details .colors {
     display: flex;
@@ -400,7 +358,6 @@ p {
     gap: 10px;
     margin: 10px 0;
 }
-
 .size-circle,
 .color-circle {
     width: 40px;
@@ -410,12 +367,10 @@ p {
     cursor: pointer;
     transition: transform 0.3s;
 }
-
 .size-circle:hover,
 .color-circle:hover {
     transform: scale(1.1);
 }
-
 .size-circle.small {
     background-color: #f1c40f;
     color: #fff;
@@ -423,7 +378,6 @@ p {
     align-items: center;
     justify-content: center;
 }
-
 .size-circle.medium {
     background-color: #3498db;
     color: #fff;
@@ -431,7 +385,6 @@ p {
     align-items: center;
     justify-content: center;
 }
-
 .size-circle.large {
     background-color: #2ecc71;
     color: #fff;
@@ -439,19 +392,15 @@ p {
     align-items: center;
     justify-content: center;
 }
-
 .color-circle.red {
     background-color: red;
 }
-
 .color-circle.blue {
     background-color: blue;
 }
-
 .color-circle.green {
     background-color: green;
 }
-
 .card-details button {
     width: 100%;
     padding: 10px;
@@ -464,7 +413,6 @@ p {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 .card-details button:hover {
     background-color: #742323;
 }
@@ -472,7 +420,6 @@ p {
     display: flex;  
     align-items: center;  
 }  
-
 .quantity button {  
     position: absolute;
     background-color: #007bff;  
