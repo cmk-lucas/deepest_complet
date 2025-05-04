@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commande T-Shirt Deepest</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .animate-pop {
+      animation: pop 0.6s ease forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+  <section class="w-full max-w-xl bg-gray-800 p-6 rounded-2xl shadow-xl animate-pop">
+    <h2 class="text-3xl font-bold text-center mb-8">Commande T-Shirt Deepest 👕</h2>
+    <form id="orderForm" class="space-y-5">
+      <div>
+        <label for="name" class="block mb-1 font-semibold">Nom complet</label>
+        <input type="text" id="name" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+          placeholder="Ex: Lucas Mbala" />
+      </div>
+
+      <div>
+        <label for="email" class="block mb-1 font-semibold">Email</label>
+        <input type="email" id="email" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+          placeholder="exemple@email.com" />
+      </div>
+
+      <div>
+        <label for="phone" class="block mb-1 font-semibold">Numéro de téléphone</label>
+        <input type="tel" id="phone" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+          placeholder="Ex: 0991234567" />
+      </div>
+
+      <div>
+        <label for="address" class="block mb-1 font-semibold">Adresse</label>
+        <input type="text" id="address" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none"
+          placeholder="Ex: Avenue des Héros, Kinshasa" />
+      </div>
+
+      <div>
+        <label for="size" class="block mb-1 font-semibold">Taille</label>
+        <select id="size" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none">
+          <option value="" disabled selected>-- Choisir la taille --</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="color" class="block mb-1 font-semibold">Couleur</label>
+        <select id="color" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none">
+          <option value="" disabled selected>-- Choisir la couleur --</option>
+          <option value="Noir">Noir</option>
+          <option value="Blanc">Blanc</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Bleu">Bleu</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="quantity" class="block mb-1 font-semibold">Quantité</label>
+        <input type="number" id="quantity" min="1" value="1" required
+          class="w-full p-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-pink-500 outline-none" />
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">Prix unitaire</label>
+        <p class="text-lg font-bold">19,99 $</p>
+      </div>
+
+      <div>
+        <label class="block mb-1 font-semibold">Total</label>
+        <p id="totalPrice" class="text-green-400 text-xl font-bold">19,99 $</p>
+      </div>
+
+      <div class="text-center mt-6 space-y-4">
+        <h3 class="text-lg font-bold mb-2">💳 Paiement Mobile</h3>
+        <div class="flex flex-wrap justify-center items-center gap-6">
+          <div>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=160x160&chl=tel:+243899999999" alt="Orange Money"
+              class="w-32 h-32 mx-auto rounded" />
+            <p class="mt-2 text-sm">Orange Money</p>
+          </div>
+          <div>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=160x160&chl=tel:+243812345678" alt="M-Pesa"
+              class="w-32 h-32 mx-auto rounded" />
+            <p class="mt-2 text-sm">M-Pesa</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-400">⚠️ Merci de payer via l'une des options, puis confirmer via WhatsApp.</p>
+      </div>
+
+      <div class="text-center mt-8">
+        <button type="submit"
+          class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">
+          Commander via WhatsApp 📦
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const quantityInput = document.getElementById('quantity');
+    const totalPrice = document.getElementById('totalPrice');
+    const unitPrice = 19.99;
+
+    // Mettre à jour le total automatiquement
+    quantityInput.addEventListener('input', () => {
+      const qty = parseInt(quantityInput.value) || 1;
+      totalPrice.textContent = `${(qty * unitPrice).toFixed(2)} $`;
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const size = document.getElementById('size').value;
+      const quantity = parseInt(document.getElementById('quantity').value) || 1;
+      const total = (quantity * unitPrice).toFixed(2);
+
+      const message = `
+🛒 Nouvelle commande T-SHIRT DEEPEST
+👕 Article : T-shirt Deepest
+📏 Taille : ${size}
+🔢 Quantité : ${quantity}
+💵 Total : ${total} $
+🙍‍♂️ Nom : ${name}
+📞 Téléphone : ${phone}
+📧 Email : ${email}
+🏠 Adresse : ${address}
+      `.trim();
+
+      const encodedMessage = encodeURIComponent(message);
+      const waPhone = "243815344201";
+      const url = `https://wa.me/${waPhone}?text=${encodedMessage}`;
+      window.open(url, '_blank');
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const size = document.getElementById('size').value;
+      const color = document.getElementById('color').value;
+      const quantity = parseInt(document.getElementById('quantity').value) || 1;
+      const total = (quantity * unitPrice).toFixed(2);
+
+      const message = `
+🛒 Nouvelle commande T-SHIRT DEEPEST
+👕 Article : T-shirt Deepest
+📏 Taille : ${size}
+🎨 Couleur : ${color}
+🔢 Quantité : ${quantity}
+💵 Total : ${total} $
+🙍‍♂️ Nom : ${name}
+📞 Téléphone : ${phone}
+📧 Email : ${email}
+🏠 Adresse : ${address}
+  `.trim();
+
+      const encodedMessage = encodeURIComponent(message);
+      const waPhone = "243815344201";
+      const url = `https://wa.me/${waPhone}?text=${encodedMessage}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+
+</html>
