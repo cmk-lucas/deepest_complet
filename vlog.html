@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vlog Deepest - Séances Photos & Coulisses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer utilities {
+      .text-deepest-red {
+        color: #ff2e2e;
+      }
+      .bg-deepest-black {
+        background-color: #0a0a0a;
+      }
+      .border-deepest-red {
+        border-color: #ff2e2e;
+      }
+      .hover-bg-deepest-red:hover {
+        background-color: #ff2e2e;
+      }
+    }
+    /* Scroll snap horizontal container */
+    .snap-x {
+      scroll-snap-type: x mandatory;
+    }
+    .snap-center {
+      scroll-snap-align: center;
+    }
+  </style>
+</head>
+<body class="bg-deepest-black text-gray-300 min-h-screen">
+
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-extrabold uppercase tracking-wide text-deepest-red mb-2">Vlog Deepest</h1>
+    <p class="text-gray-400 max-w-xl mx-auto">Découvrez les coulisses, séances photos et moments exclusifs de Deepest.</p>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+    <!-- Fonction pour chaque section -->
+    <!-- Je crée une fonction JS pour générer la structure -->
+    
+    <!-- Exemple section avec slider -->
+    <section id="seances-photos">
+      <h2 class="text-3xl font-bold text-deepest-red uppercase border-b-2 border-deepest-red pb-3 mb-8 max-w-max">Séances Photos</h2>
+      <div class="relative">
+        <button aria-label="Précédent" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-deepest-black/80 rounded-r border border-deepest-red text-deepest-red hover:bg-deepest-red transition" onclick="scrollLeft('seances-photos-scroll')">
+          &#8592;
+        </button>
+        <div id="seances-photos-scroll" class="flex overflow-x-auto snap-x gap-4 scrollbar-hide scroll-smooth py-2">
+          <img src="assets/T2j2.jpg" alt="Séance photo Deepest 1" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T2j3.jpg" alt="Séance photo Deepest 2" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T2j3.jpg" alt="Séance photo Deepest 3" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T2j3.jpg" alt="Séance photo Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+        </div>
+        <button aria-label="Suivant" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-deepest-black/80 rounded-l border border-deepest-red text-deepest-red hover:bg-deepest-red transition" onclick="scrollRight('seances-photos-scroll')">
+          &#8594;
+        </button>
+      </div>
+    </section>
+
+    <section id="coulisses">
+      <h2 class="text-3xl font-bold text-deepest-red uppercase border-b-2 border-deepest-red pb-3 mb-8 max-w-max">Coulisses & Making-of</h2>
+      <div class="relative">
+        <button aria-label="Précédent" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-deepest-black/80 rounded-r border border-deepest-red text-deepest-red hover:bg-deepest-red transition" onclick="scrollLeft('coulisses-scroll')">
+          &#8592;
+        </button>
+        <div id="coulisses-scroll" class="flex overflow-x-auto snap-x gap-4 scrollbar-hide scroll-smooth py-2">
+          <img src="assets/T2j3.jpg" alt="Coulisse Deepest 1" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T2j3.jpg" alt="Coulisse Deepest 2" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T2j4.jpg" alt="Coulisse Deepest 3" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T6j4.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T7j3.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T1j3.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/tshirt-8.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T6j2.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+          <img src="assets/T6j4.jpg" alt="Coulisse Deepest 4" class="snap-center rounded-lg shadow-lg cursor-pointer w-64 h-40 object-cover" onclick="openLightbox(this)" />
+        </div>
+        <button aria-label="Suivant" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-deepest-black/80 rounded-l border border-deepest-red text-deepest-red hover:bg-deepest-red transition" onclick="scrollRight('coulisses-scroll')">
+          &#8594;
+        </button>
+      </div>
+    </section>
+
+    <!-- Tu peux rajouter plus de sections similaires ci-dessous -->
+
+  </main>
+
+  <footer class="text-center py-8 text-gray-600 border-t border-gray-800 mt-20">
+    &copy; 2025 Deepest Vlog. Tous droits réservés.
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 hidden z-50">
+    <button aria-label="Fermer" onclick="closeLightbox()" class="absolute top-6 right-6 text-deepest-red text-3xl font-bold hover:text-white transition">×</button>
+    <img id="lightbox-img" src="" alt="Image agrandie" class="max-w-full max-h-full rounded-lg shadow-lg" />
+  </div>
+
+  <script>
+    function scrollLeft(id) {
+      const container = document.getElementById(id);
+      container.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+    function scrollRight(id) {
+      const container = document.getElementById(id);
+      container.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // bloque scroll page
+    }
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // réactive scroll
+    }
+    // Fermer lightbox au clic hors image
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') closeLightbox();
+    });
+    // Fermer au Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
+
+  <style>
+    /* Cacher la scrollbar horizontale sous Windows/mac */
+    .scrollbar-hide {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</body>
+</html>
